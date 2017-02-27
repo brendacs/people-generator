@@ -1,0 +1,140 @@
+/* variables */
+$primary-color: #4ABDAC;
+$secondary-color: #FC4A1A;
+$tertiary-color: #DFDCE3;
+
+$primary-font-color: white;
+$secondary-font-color: #F7B733;
+
+$primary-font: Dolce Vita;
+$secondary-font: Adam;
+
+/* mixins */
+
+@mixin color-scheme($bg, $font) {
+	background: $bg;
+	color: $font;
+}
+
+@mixin centerer ($direction) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: $direction;
+}
+
+@mixin basic-button {
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+
+/*reset*/
+
+ol, ul {
+	list-style: none outside none;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	background: none repeat scroll 0 0 transparent;
+	border: 0 none;
+	margin: 0;
+	outline: 0 none;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+/* fonts */
+
+@font-face {
+	font-family: Dolce Vita;
+	src: url("../fonts/Dolce Vita.ttf");
+}
+
+@font-face {
+	font-family: Adam;
+	src: url("../fonts/Adam.otf");
+}
+
+/* body */
+
+html, body {
+	height: 100%;
+	@include color-scheme($primary-color, $primary-font-color);
+}
+
+header {
+	font: 30px $primary-font;
+	text-align: center;
+	padding: 30px 0px 0px 0px;
+}
+
+#button-div {
+	@include centerer(column);
+	padding: 10px;
+
+	button {
+		@include basic-button;
+		@include color-scheme($secondary-color, $primary-font-color);
+		height: 50px;
+		width: 200px;
+		margin: 10px;
+		font: 18px $primary-font;
+		box-shadow: 1px 1px 5px gray;
+	}
+
+	button:hover {
+		opacity: 0.9;
+	}
+
+	button:active {
+		opacity: 1;
+	}
+}
+
+#people-div {
+	@include centerer(column);
+	padding: 40px;
+
+	ul {
+		font: 20px $secondary-font;
+		text-align: center;
+
+		li {
+			text-transform: capitalize;
+		}
+	}
+}
+
+footer {
+	@include centerer(row);
+	border-top: 1px solid white;
+	font-size: 25px;
+	width: 100vw;
+	height: 65px;
+	position: absolute;
+	bottom: 0;
+
+	img {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		border: 4px dotted $secondary-font-color;
+		margin: 0px 15px;
+		cursor: pointer;
+		transition: all 0.2s ease;
+	}
+
+	img:hover {
+		opacity: 0.75;
+		border: 4px dashed $secondary-font-color;
+	}
+
+	img:active {
+		opacity: 1;
+	}
+}
+
+
