@@ -103,6 +103,10 @@ header {
   filter: grayscale(30%);
 }
 
+#people-info {
+  position: absolute;
+}
+
 footer {
   display: flex;
   align-items: center;

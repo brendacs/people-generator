@@ -129,6 +129,11 @@ header {
 	}
 }
 
+#people-info {
+	position: absolute;
+	
+}
+
 footer {
 	@include centerer(row);
 	border-top: 1px solid white;
