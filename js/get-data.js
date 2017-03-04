@@ -42,7 +42,7 @@ function getData() {
 			}).appendTo('div#people-info');
 
 			// for testing
-			// console.log(data);
+			console.log(data);
 	  	}
 	});
 }
@@ -50,10 +50,3 @@ function getData() {
 // display on DOM load and on button click
 $(document).ready(getData);
 $('#gen').on("click", getData);
-
-function showInfo() {
-	$('#info-container').css("display", "block");
-}
-
-// pop-up modules for displaying more info on img click
-$('.people-image').on("click", showInfo);
