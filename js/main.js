@@ -19,21 +19,30 @@ function getData() {
 				people.push('</div>');
 
 				// extra info about people, only appear on image click
-				info.push('<li class="info">' + results[i].gender + '</li>');
-				info.push('<li class="info">' + results[i].dob + '</li>');
-				info.push('<li class="info">' + results[i].email + '</li>');
-				info.push('<li class="info">' + results[i].cell + '</li>');
-				info.push('<li class="info">' + results[i].phone + '</li>');
+				info.push('<div>');
+				info.push('<li class="info">Gender: ' + results[i].gender + '</li>');
+				info.push('<li class="info">DOB: ' + results[i].dob + '</li>');
+				info.push('<li class="info">Email: ' + results[i].email + '</li>');
+				info.push('<li class="info">Home: ' + results[i].phone + '</li>');
+				info.push('<li class="info">Cell: ' + results[i].cell + '</li>');
+				info.push('</div>');
 				i++;
 			});
 
+			// list of people, including images and names
 			$('<ul/>', {
 				'id': 'people-list',
 				html: people.join('')
 			}).appendTo('div#people-div');
 
+			// list of people info, including gender, dob, email, home, cell
+			$('<div/>', {
+				'id': 'info-list',
+				html: info.join('')
+			}).appendTo('div#people-info');
+
 			// for testing
-			console.log(data);
+			// console.log(data);
 	  	}
 	});
 }
@@ -42,5 +51,9 @@ function getData() {
 $(document).ready(getData);
 $('#gen').on("click", getData);
 
+function showInfo() {
+	$('#info-container').css("display", "block");
+}
+
 // pop-up modules for displaying more info on img click
-// $('img.people-image').on("click", showModule);
+$('.people-image').on("click", showInfo);

@@ -103,8 +103,42 @@ header {
   filter: grayscale(30%);
 }
 
-#people-info {
+#info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(223, 220, 227, 0.6);
+  font: 18px Dolce Vita;
+  display: none;
+  /* for the whole module */
+}
+#info-container #people-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+  background: #4ABDAC;
+  width: 30%;
+  height: 30%;
+  margin-top: 30px;
+  color: #F7B733;
+  border-radius: 5px;
+  box-shadow: 1px 1px 8px gray;
+  padding: 10px;
+}
+#info-container #people-info div {
+  list-style-type: none;
+  display: none;
+  /* for each different person */
+}
+#info-container #people-info div li {
+  padding: 1px;
 }
 
 footer {
