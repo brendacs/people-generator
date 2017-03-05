@@ -135,9 +135,8 @@ header {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background: rgba(223, 220, 227, 0.6);
+	background: rgba(0, 0, 0, 0.6);
 	font: 18px $primary-font;
-	display: none; /* for the whole module */
 
 	#people-info {
 		@include centerer(row);
@@ -145,15 +144,24 @@ header {
 		background: $primary-color;
 		width: 30%;
 		height: 30%;
-		margin-top: 30px;
+		margin-top: 10px;
 		color: $secondary-font-color;
 		border-radius: 5px;
-		box-shadow: 1px 1px 8px gray;
+		box-shadow: 1px 1px 8px white;
 		padding: 10px;
+
+		span { /* close button */
+			position: absolute;
+			top: 0;
+			right: 0;
+			color: $secondary-font-color;
+			font-size: 20px;
+			cursor: pointer;
+			padding: 7px 10px;
+		}
 
 		div {
 			list-style-type: none;
-			display: none; /* for each different person */
 
 			li {
 				padding: 1px;
@@ -189,5 +197,3 @@ footer {
 		opacity: 1;
 	}
 }
-
-

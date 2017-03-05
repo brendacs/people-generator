@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 		},
 		concat: {
 		    options: {
-		      separator: ';',
+		      separator: grunt.util.linefeed,
 		    },
 		    dist: {
 		      src: ['js/get-data.js', 'js/info-modal.js'],

@@ -13,18 +13,18 @@ function getData() {
 			
 			$.each(results, function(data) {
 				// people's images and names shown
-				people.push('<div>');
-				people.push('<img class="people-image" src="' + results[i].picture.large + '"/>');
+				people.push('<div id="image-' + i +'">');
+				people.push('<img onclick="showModal();" class="people-image" src="' + results[i].picture.large + '"/>');
 				people.push('<li class="people">' + results[i].name.first + ' ' + results[i].name.last + '</li>');
 				people.push('</div>');
 
 				// extra info about people, only appear on image click
-				info.push('<div>');
-				info.push('<li class="info">Gender: ' + results[i].gender + '</li>');
-				info.push('<li class="info">DOB: ' + results[i].dob + '</li>');
-				info.push('<li class="info">Email: ' + results[i].email + '</li>');
-				info.push('<li class="info">Home: ' + results[i].phone + '</li>');
-				info.push('<li class="info">Cell: ' + results[i].cell + '</li>');
+				info.push('<div class="person-info" id="person-' + i +'">');
+				info.push('<li>Gender: ' + results[i].gender + '</li>');
+				info.push('<li>DOB: ' + results[i].dob + '</li>');
+				info.push('<li>Email: ' + results[i].email + '</li>');
+				info.push('<li>Home: ' + results[i].phone + '</li>');
+				info.push('<li>Cell: ' + results[i].cell + '</li>');
 				info.push('</div>');
 				i++;
 			});
@@ -42,7 +42,7 @@ function getData() {
 			}).appendTo('div#people-info');
 
 			// for testing
-			console.log(data);
+			// console.log(data);
 	  	}
 	});
 }
@@ -50,4 +50,18 @@ function getData() {
 // display on DOM load and on button click
 $(document).ready(getData);
 $('#gen').on("click", getData);
-;
+
+function hideModal() {
+	$('#info-container').hide();
+	$('.person-info').hide();
+}
+
+function showModal() {
+	$('#info-container').show();
+	$('.person-info').hide();
+}
+
+window.onload = hideModal();
+
+// close button
+$('span').on("click", hideModal);

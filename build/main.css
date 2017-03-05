@@ -25,9 +25,10 @@ header { font: 30px Dolce Vita; text-align: center; padding: 30px 30px 0px 30px;
 #people-div ul div img { padding: 15px; border-radius: 50%; transition: all 0.3s ease; }
 #people-div ul div img:hover { opacity: 0.7; filter: grayscale(30%); }
 
-#info-container { display: flex; align-items: center; justify-content: center; flex-direction: column; position: absolute; top: 0; height: 100%; width: 100%; background: rgba(223, 220, 227, 0.6); font: 18px Dolce Vita; display: none; /* for the whole module */ }
-#info-container #people-info { display: flex; align-items: center; justify-content: center; flex-direction: row; position: absolute; background: #4ABDAC; width: 30%; height: 30%; margin-top: 30px; color: #F7B733; border-radius: 5px; box-shadow: 1px 1px 8px gray; padding: 10px; }
-#info-container #people-info div { list-style-type: none; display: none; /* for each different person */ }
+#info-container { display: flex; align-items: center; justify-content: center; flex-direction: column; position: absolute; top: 0; height: 100%; width: 100%; background: rgba(0, 0, 0, 0.6); font: 18px Dolce Vita; }
+#info-container #people-info { display: flex; align-items: center; justify-content: center; flex-direction: row; position: absolute; background: #4ABDAC; width: 30%; height: 30%; margin-top: 10px; color: #F7B733; border-radius: 5px; box-shadow: 1px 1px 8px white; padding: 10px; }
+#info-container #people-info span { /* close button */ position: absolute; top: 0; right: 0; color: #F7B733; font-size: 20px; cursor: pointer; padding: 7px 10px; }
+#info-container #people-info div { list-style-type: none; }
 #info-container #people-info div li { padding: 1px; }
 
 footer { display: flex; align-items: center; justify-content: center; flex-direction: row; border-top: 1px solid white; font-size: 25px; width: 100%; height: 65px; margin-top: 20px; }
