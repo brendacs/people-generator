@@ -137,6 +137,7 @@ header {
 	width: 100%;
 	background: rgba(0, 0, 0, 0.6);
 	font: 18px $primary-font;
+	letter-spacing: 1px;
 
 	#people-info {
 		@include centerer(row);
@@ -154,7 +155,7 @@ header {
 			position: absolute;
 			top: 0;
 			right: 0;
-			color: $secondary-font-color;
+			color: $primary-font-color;
 			font-size: 20px;
 			cursor: pointer;
 			padding: 7px 10px;
