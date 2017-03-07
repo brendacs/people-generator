@@ -9,7 +9,11 @@ function getData() {
 			var people = [];
 			var info = [];
 				
-			$('div#people-div').empty(); // empty and then append to replace
+			// empty and then append to replace
+			$('div#people-div').empty();
+			$('div#people-info').empty();
+			people.length = 0;
+			info.length = 0;
 			
 			$.each(results, function(data) {
 				// people's images and names shown
@@ -61,7 +65,7 @@ function hideModal() {
 function showModal() {
 	var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 	
-	// hide when on mobile or tablet
+	// hide modals when on mobile or tablet
 	if (width < 1024) {
 		hideModal();
 	} else {
@@ -110,5 +114,5 @@ function showModal() {
 // don't show modals when site opens
 window.onload = hideModal();
 
-// close button
-$('span').on("click", hideModal);
+// close on click
+$('#info-container').on("click", hideModal);

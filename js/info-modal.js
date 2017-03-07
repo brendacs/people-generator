@@ -57,5 +57,5 @@ function showModal() {
 // don't show modals when site opens
 window.onload = hideModal();
 
-// close button
-$('span').on("click", hideModal);
+// close on click
+$('#info-container').on("click", hideModal);

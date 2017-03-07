@@ -9,7 +9,11 @@ function getData() {
 			var people = [];
 			var info = [];
 				
-			$('div#people-div').empty(); // empty and then append to replace
+			// empty and then append to replace
+			$('div#people-div').empty();
+			$('div#people-info').empty();
+			people.length = 0;
+			info.length = 0;
 			
 			$.each(results, function(data) {
 				// people's images and names shown
