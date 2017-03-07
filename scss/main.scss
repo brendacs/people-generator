@@ -129,6 +129,48 @@ header {
 	}
 }
 
+#info-container {
+	@include centerer(column);
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	font: 18px $primary-font;
+	letter-spacing: 1px;
+
+	#people-info {
+		@include centerer(row);
+		position: absolute;
+		background: $primary-color;
+		width: 30%;
+		height: 30%;
+		margin-top: 10px;
+		color: $secondary-font-color;
+		border-radius: 5px;
+		box-shadow: 1px 1px 8px white;
+		padding: 10px;
+
+		span { /* close button */
+			position: absolute;
+			top: 0;
+			right: 0;
+			color: $primary-font-color;
+			font-size: 20px;
+			cursor: pointer;
+			padding: 7px 10px;
+		}
+
+		div {
+			list-style-type: none;
+
+			li {
+				padding: 1px;
+			}
+		}
+	}
+}
+
 footer {
 	@include centerer(row);
 	border-top: 1px solid white;
@@ -156,5 +198,4 @@ footer {
 		opacity: 1;
 	}
 }
-
 

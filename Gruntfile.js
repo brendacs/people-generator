@@ -3,8 +3,8 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		watch: {
 		 	scripts: {
-				files: ['**/*.scss'],
-				tasks: ['sass'],
+				files: ['**/*.scss', '**/*.js'],
+				tasks: ['sass', 'concat'],
 				options: {
 		    		spawn: false,
 		    	},
@@ -13,17 +13,27 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				options: {
-					style: 'expanded'
+					style: 'compact'
 				},
 				files: {
-					'css/main.css': 'scss/main.scss'
-				}
-			}
-		}
+					'build/main.css': 'scss/main.scss',
+				},
+			},
+		},
+		concat: {
+		    options: {
+		      separator: grunt.util.linefeed,
+		    },
+		    dist: {
+		      src: ['js/get-data.js', 'js/info-modal.js'],
+		      dest: 'build/main.js',
+		    },
+		},
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	
 	grunt.registerTask('default', ['watch']);
 
